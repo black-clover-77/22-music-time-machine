@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Music Time Machine | Unique Feature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/mobile.css" />
+    <link rel="stylesheet" href="../shared/experience-kit.css" />
+    <link rel="stylesheet" href="../shared/fx-kit.css" />
+    <link rel="stylesheet" href="../shared/engagement-kit.css" />
+    <link rel="stylesheet" href="../shared/soundkit.css" />
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-orb"></div>
+        <p style="letter-spacing: 5px; font-size: 0.7rem;">TUNING FREQUENCIES...</p>
+    </div>
+
+    <div class="feature-tag">CORE_FEATURE_22</div>
+
+    <audio id="bg-audio" loop>
+        <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_3d1a33a1e9.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="audio-toggle">🎵</button>
+
+    <main id="app">
+        <div id="canvas-container">
+            <canvas id="record-canvas"></canvas>
+        </div>
+
+        <div class="ui-panel">
+            <div style="text-align: center;">
+                <h2 id="era-title" style="letter-spacing: 5px; color: var(--primary);">1980s SYNTHWAVE</h2>
+                <p id="era-desc" style="font-size: 0.8rem; color: #888; margin-top: 10px;">The golden age of neon and analog synthesizers.</p>
+            </div>
+
+            <div class="era-grid">
+                <button class="era-btn" data-era="1950">1950s</button>
+                <button class="era-btn" data-era="1970">1970s</button>
+                <button class="era-btn active" data-era="1980">1980s</button>
+                <button class="era-btn" data-era="1990">1990s</button>
+                <button class="era-btn" data-era="2026">2026</button>
+                <button class="era-btn" data-era="2077">2077</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="nav-hint">SCROLL OR TAP TO EXPLORE NEXT</div>
+
+    <footer class="github-badge">
+        <a href="https://github.com/AkshatRock/weboreel-hackathon" target="_blank">⭐ GitHub Repo</a>
+        <span>VishwaNova 2026</span>
+    </footer>
+
+    <script src="../shared/soundkit.js" defer></script>
+    <script src="../shared/experience-kit.js" defer></script>
+    <script src="../shared/engagement-kit.js" defer></script>
+    <script src="../shared/experience-configs-22-50.js" defer></script>
+    <script src="../shared/fx-kit.js" defer></script>
+    <script src="script.js"></script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const parts = location.pathname.split("/").filter(Boolean);
+        const slug = parts[parts.length - 2] || "";
+        const cfg = window.WeboReelsExperienceConfigs22to50?.[slug] || { title: document.title };
+        window.WeboReelsExperienceKit?.init?.(cfg);
+      });
+    </script>
+</body>
+</html>
